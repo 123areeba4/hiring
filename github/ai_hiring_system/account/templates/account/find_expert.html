@@ -1,0 +1,28 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center">Find Experts</h2>
+    <form method="GET" class="p-4 shadow rounded bg-light">
+        <input type="text" name="profession" class="form-control mb-3" placeholder="Enter profession...">
+        <button class="btn btn-primary w-100">Search</button>
+    </form>
+    
+    <div class="row mt-4">
+        {% for expert in experts %}
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">{{ expert.name }}</h5>
+                    <p class="card-text"><strong>Profession:</strong> {{ expert.profession }}</p>
+                    <p class="card-text"><strong>Location:</strong> {{ expert.location }}</p>
+                    <a href="#" class="btn btn-outline-primary">View Profile</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-center text-muted">No experts found.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

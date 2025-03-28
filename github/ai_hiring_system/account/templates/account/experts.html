@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center">Available Experts</h2>
+    
+    <!-- Search bar -->
+    <div class="row justify-content-center mb-3">
+        <div class="col-md-6">
+            <input type="text" id="searchQuery" class="form-control" placeholder="Search experts by profession, skills, etc.">
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-primary" onclick="fetchExperts()">Search</button>
+        </div>
+    </div>
+
+    <!-- Experts list -->
+    <ul id="experts-list" class="list-group">
+        <!-- Data dynamically insert hoga -->
+    </ul>
+</div>
+
+<script>
+    function fetchExperts() {
+        let query = document.getElementById("searchQuery").value;
+        let url = "http://127.0.0.1:8001/accounts/search-experts/?profession=" + encodeURIComponent(query);
+        
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                let expertsList = document.getElementById("experts-list");
+                expertsList.innerHTML = ""; // Clear previous results
+                
+                if (data.experts.length === 0) {
+                    expertsList.innerHTML = "<li class='list-group-item'>No experts found.</li>";
+                } else {
+                    data.experts.forEach(function(expert) {
+                        let li = document.createElement("li");
+                        li.className = "list-group-item";
+                        li.innerHTML = <strong>${expert.name}</strong> - ${expert.profession} @ ${expert.company} (${expert.location});
+                        expertsList.appendChild(li);
+                    });
+                }
+            })
+            .catch(error => {
+                console.error("Error fetching experts:", error);
+            });
+    }
+
+    // Page load hone pe experts fetch karna
+    window.onload = function() {
+        fetchExperts();
+    };
+</script>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+<div class="container text-center mt-5">
+    <h1 class="display-4 text-primary">Welcome to AI Hiring System</h1>
+    <p class="lead">Please select your role:</p>
+
+    <div class="mt-4">
+        <a href="{% url 'apply_for_job' %}" class="btn btn-primary btn-lg">I am a Job Seeker</a>
+        <a href="{% url 'find_expert' %}" class="btn btn-secondary btn-lg">I am a Recruiter</a>
+    </div>
+</div>
+{% endblock %}

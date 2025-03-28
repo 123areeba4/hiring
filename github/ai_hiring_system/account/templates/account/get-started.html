@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who We Are - CodeConnect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+        h1 {
+            color: #4677C7;
+        }
+        h2 {
+            color: #3659A2;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .join-link {
+            color: red;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 15px;
+            font-size: 18px;
+        }
+        .join-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Who We Are & What We Do</h1>
+        <p><strong>Code Connect</strong> is an AI-driven hiring platform designed to bridge the gap between IT professionals in Pakistan and hiring managers in Germany...</p>
+
+        <h2>How Code Connect Works</h2>
+        <p>Code Connect simplifies the hiring process through AI-driven automation...</p>
+
+        <!-- "Join us today" correctly links to services.html -->
+        
+        <a href="{% url 'services' %}"class="red-link">➝ Join us today</a>
+        
+        <p>Smart Hiring & Job Matching – Powered by AI</p>
+    </div>
+
+</body>
+</html>

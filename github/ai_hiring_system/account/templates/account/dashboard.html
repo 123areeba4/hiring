@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - CodeConnect</title>
+    {% load static %}
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* White Background */
+        body {
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            width: 100%;
+            background: blue;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Main Container */
+        .dashboard-container {
+            background: rgba(40, 73, 206, 0.9);
+            padding: 30px;
+            color: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            max-width: 800px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Left Side - Text */
+        .text-section {
+            flex: 1;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        /* Right Side - Image */
+        .image-section {
+            flex: 1;
+            text-align: center;
+        }
+
+        .image-section img {
+            width: 80%;
+            max-width: 300px;
+            border-radius: 10px;
+        }
+
+        /* Buttons */
+        .dashboard-btn {
+            background: #4000ff;
+            padding: 12px 20px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 5px;
+            transition: 0.3s;
+        }
+
+        .dashboard-btn:hover {
+            background: #2a00e6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .dashboard-container {
+                flex-direction: column;
+                text-align: center;
+                width: 90%;
+            }
+
+            .text-section {
+                text-align: center;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .image-section {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+
+        <img src="{% static 'logo.png' %}" alt="CodeConnect Logo" style="height: 40px; vertical-align: middle;">
+        CodeConnect
+    
+
+    <!-- Main Content -->
+    <div class="dashboard-container">
+        <!-- Left Side - Text -->
+        <div class="text-section">
+            <h1>🚀 Welcome to CodeConnect</h1>
+            <p>Find your dream job or hire top talent effortlessly.</p>
+
+            <!-- Buttons -->
+            <a href="{% url 'apply_for_job' %}" class="dashboard-btn">🔍 Hire By AI</a>
+            <a href="{% url 'post_job' %}" class="dashboard-btn">🏢 Recruiter</a>
+            <a href="{% url 'find_expert' %}" class="dashboard-btn">🏢 Experts Find</a>
+        </div>
+        <div class="image-container">
+            {% load static %}
+<img src="{% static 'C:\Users\pc\Documents\GitHub\ai_hiring_system\static\WhatsApp Image 2025-03-15 at 14.35.03_408a5188.jpg' %}" alt="AI Hiring">
+            
+        </div>
+        <!-- Right Side - Image -->
+        <div class="image-section">
+            <img src="{% static 'C:\Users\pc\Documents\GitHub\ai_hiring_system\static\WhatsApp Image 2025-03-15 at 14.35.03_408a5188.jpg' %}" alt="AI Hiring">
+          
+        </div>
+    </div>
+
+</body>
+</html>

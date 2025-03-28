@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeConnect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #EAF2FB;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 80%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 36px;
+            color: #4677C7;
+        }
+        .header p {
+            color: red;
+            font-weight: bold;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .text {
+            width: 60%;
+        }
+        .image {
+            width: 35%;
+        }
+        .image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4677C7;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #345BAA;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <p>Get hired by top German companies in minutes!</p>
+            <h1>CodeConnect</h1>
+        </div>
+        <div class="content">
+            <div class="text">
+                <p>CodeConnect is an AI-powered hiring platform that seamlessly connects top IT professionals from Pakistan with hiring managers in Germany. Our AI-driven matching system ensures that skilled candidates find the right job opportunities while employers quickly discover top talent.</p>
+                
+            </div>
+            <div class="image">
+            
+                {% load static %}
+                <img src="{% static 'C:\Users\pc\Documents\GitHub\ai_hiring_system\static\WhatsApp Image 2025-03-15 at 14.35.03_408a5188.jpg' %}" alt="AI Hiring">
+                            
+            </div>
+        </div>
+        <div class="footer">
+            Smart Hiring & Job Matching – Powered by AI
+        </div>
+    </div>
+
+</body>
+</html>

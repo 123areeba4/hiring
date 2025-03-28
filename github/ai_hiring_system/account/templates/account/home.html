@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Connect - Home</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white; /* Full white background */
+        }
+
+        /* Full-width header */
+        .header {
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            color: red;
+            padding: 15px;
+            background-color: white;
+        }
+
+        /* Main container - Flexbox */
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Left Side: Logo and Text */
+        .left-content {
+            display: flex;
+            align-items: center;
+            width: 50%;
+            padding-left: 50px;
+        }
+
+        .logo img {
+            width: 80px; /* Adjust logo size */
+            height: auto;
+            margin-right: 15px;
+        }
+
+        .text-content {
+            flex: 1;
+        }
+
+        .text-content h1 {
+            color: blue;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .text-content p {
+            font-size: 16px;
+            color: #555;
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        /* Buttons */
+        .buttons {
+            margin-top: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            margin-right: 10px;
+            transition: background 0.3s;
+        }
+
+        .btn-learn {
+            border: 2px solid black;
+            color: black;
+            background: white;
+        }
+
+        .btn-learn:hover {
+            background: black;
+            color: white;
+        }
+
+        .btn-start {
+            background-color: #4a3cbf;
+            color: white;
+            border: none;
+        }
+
+        .btn-start:hover {
+            background-color: #2a1c9f;
+        }
+
+        /* Right Side: Image */
+        .image-container {
+            width: 50%;
+            text-align: center;
+            padding-right: 50px;
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 400px; /* Adjust size */
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        GET HIRED BY TOP COMPANIES IN GERMANY IN MINUTES
+    </div>
+
+    <!-- Full-width container -->
+    <div class="container">
+        <!-- Left Side: Logo and Text -->
+        <div class="left-content">
+            <div class="logo">
+               <!-- <img src="logo.png" alt="Code Connect Logo"> --><!-- Replace with actual logo file -->
+            </div>
+            <div class="text-content">
+                <h1>Code Connect</h1>
+                <p>Code Connect is an AI-powered hiring platform that seamlessly connects top IT professionals from Pakistan with hiring managers in Germany.</p>
+                <div class="buttons">
+                    <a href="{% url 'learn-more' %}"class="btn btn-learn">Learn More</a>
+                    <a href="{% url 'get-started' %}"class="btn btn-learn">Get Started</a>
+                    
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Image -->
+        <div class="image-container">
+            {% load static %}
+<img src="{% static 'C:\Users\pc\Documents\GitHub\ai_hiring_system\static\WhatsApp Image 2025-03-15 at 14.35.03_408a5188.jpg' %}" alt="AI Hiring">
+            
+        </div>
+    </div>
+
+    <p class="footer">Powered by AI - Code Connect</p>
+
+</body>
+</html>

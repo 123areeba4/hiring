@@ -1,0 +1,151 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - CodeConnect</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f8ff; /* Light blue background */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #e3f2fd;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        .logo {
+            width: 60px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color: #3b82f6;
+            margin-bottom: 5px;
+        }
+
+        p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .form-group input {
+            width: 48%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .full-width {
+            width: 100%;
+        }
+
+        .btn {
+            background-color: #3b82f6;
+            color: white;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #2563eb;
+        }
+
+        .login-link {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .login-link a {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .linkedin-btn {
+            background: #0073b1;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            border: none;
+        }
+
+        .linkedin-btn:hover {
+            background: #005582;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="{% static 'images/logo.jpg' %}" alt="Company Logo" class="logo">
+        
+        <h1>CodeConnect</h1>
+        <p>Sign Up for New Profile</p>
+
+        <form action="{% url 'signup' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" name="first_name" placeholder="First Name" required>
+                <input type="text" name="last_name" placeholder="Last Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Email address" class="full-width" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+
+            <button type="submit" class="btn">Sign up</button>
+        </form>
+
+        <p class="login-link">Already have an account? <a href="{% url 'login' %}">LOG IN</a></p>
+        
+        {% if messages %}
+            {% for message in messages %}
+                <p style="color: red;">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+</body>
+</html>
