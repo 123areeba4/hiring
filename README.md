@@ -1,4 +1,93 @@
+Follow these steps to run your AI Hiring System project on your local machine and open it in the browser:
 
+
+---
+
+1. Move to GitHub Folder (if your project is in GitHub)
+
+If your project is inside a GitHub folder, open the terminal (or Command Prompt) and navigate to your project directory:
+
+cd path/to/your/github/folder
+
+(Replace path/to/your/github/folder with the actual path where your AI Hiring System is located.)
+
+
+---
+
+2. Activate Virtual Environment (venv)
+
+Your project has a virtual environment (venv). You need to activate it:
+
+For Windows (CMD or PowerShell):
+
+venv\Scripts\activate
+
+For Mac/Linux:
+
+source venv/bin/activate
+
+After activation, you should see (venv) appear before your command prompt.
+
+
+---
+
+3. Move to AI Hiring System Folder
+
+Now, navigate to your AI Hiring System project directory:
+
+cd ai-hiring-system
+
+
+---
+
+4. Run Django Server on Port 8001
+
+Since you are using Django, start the server on port 8001:
+
+python manage.py runserver 8001
+
+
+---
+
+5. Open in Browser
+
+Once the server starts successfully, open your browser and go to:
+
+http://127.0.0.1:8001/
+
+This will open your AI Hiring System in your browser.
+
+
+---
+
+Optional: Superuser Login (if needed)
+
+If you need to log in as an admin, run:
+
+python manage.py createsuperuser
+
+Then enter your username, email, and password.
+
+Now, you can log in at:
+
+http://127.0.0.1:8001/admin
+
+
+---
+
+All Steps in One Flow
+
+cd path/to/your/github/folder
+venv\Scripts\activate   # For Windows
+# OR
+source venv/bin/activate   # For Mac/Linux
+
+cd ai-hiring-system
+python manage.py runserver 8001
+
+Now, visit http://127.0.0.1:8001/ in your browser.
+
+Let me know if you need further help!
 
 AI Hiring System - Step-by-Step Development Process
 
